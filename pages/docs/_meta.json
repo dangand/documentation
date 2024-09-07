@@ -1,0 +1,21 @@
+{
+    "index": "Introduction",
+    "designSystem": "Design System",
+    "--configuration": {
+        "type": "separator",
+        "title": "Platform"
+    },
+    "platform-get-started": "Getting Started",
+    "platform-guide": "Guide",
+
+    "--ui": {
+        "type": "separator",
+        "title": "Base UI"
+    },
+    "typography": {
+        "title": "Typography"
+    },
+    "components": {
+        "title": "Components"
+    }
+}

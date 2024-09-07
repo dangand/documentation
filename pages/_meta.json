@@ -1,0 +1,26 @@
+{
+    "index": {
+        "title": "Home",
+        "display": "hidden",
+        "type": "page",
+        "theme": {
+            "layout": "full"
+        }
+    },
+    "docs": {
+        "title": "Documentation",
+        "type": "page",
+        "href": "/docs"
+    },
+    "about": {
+        "title": "About",
+        "type": "page",
+        "href": "/about"
+    },
+    "contact": {
+        "title": "Contact ↗",
+        "type": "page",
+        "href": "https://wa.me/6288212253403",
+        "newWindow": true
+    }
+}

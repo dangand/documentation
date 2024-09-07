@@ -1,0 +1,105 @@
+# Button
+
+Displays a button or a component that looks like a button.
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonDemo() {
+    return <Button>Button</Button>;
+}
+```
+
+## Variant
+
+Available variants in button
+
+import CompButton from "components/button";
+
+<CompButton variant={"destructive"}>asd</CompButton>
+
+### Primary
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonDemo() {
+    return <Button>Button</Button>;
+}
+```
+
+### Secondary
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonSecondary() {
+    return <Button variant="secondary">Secondary</Button>;
+}
+```
+
+### Destructive
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonDestructive() {
+    return <Button variant="destructive">Destructive</Button>;
+}
+```
+
+### Outline
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonOutline() {
+    return <Button variant="outline">Outline</Button>;
+}
+```
+
+### Ghost
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonGhost() {
+    return <Button variant="ghost">Ghost</Button>;
+}
+```
+
+### Link
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonLink() {
+    return <Button variant="link">Link</Button>;
+}
+```
+
+### Icon
+
+```js filename="page.tsx" copy
+import { ChevronRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+
+export function ButtonIcon() {
+    return (
+        <Button variant="outline" size="icon">
+            <ChevronRight className="h-4 w-4" />
+        </Button>
+    );
+}
+```
+
+### Loading
+
+```js filename="page.tsx" copy
+import { Button } from "@/components/ui/button";
+
+export function ButtonIcon() {
+    return <Button loading={true}>Loading button</Button>;
+}
+```

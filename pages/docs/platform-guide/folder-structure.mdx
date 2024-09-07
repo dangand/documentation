@@ -1,0 +1,89 @@
+## Folder Structure
+
+Berikut contoh struktur folder yang di pakai dalam project, dimana menggunakan src directory dengan app router. konsep lebih detail akan di bahas di section berikutnya,
+
+import Link from "next/link";
+
+Disini gk bakal di ajarin atau jelasin cara make nextjs, belajar sendiri <Link href="https://nextjs.org/docs" target="_blank" className="text-blue-500">di sini</Link>
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+    <FileTree.Folder name="root-project" defaultOpen>
+        <FileTree.Folder name="env">
+            <FileTree.File name=".env.development" />
+            <FileTree.File name="env.production" />
+        </FileTree.Folder>
+        <FileTree.Folder name="public">
+            <FileTree.Folder name="favicon" />
+            <FileTree.Folder name="fonts" />
+            <FileTree.Folder name="images" />
+            <FileTree.Folder name="svg" />
+        </FileTree.Folder>
+        <FileTree.Folder name="src">
+            <FileTree.Folder name="app">
+                <FileTree.File name="page.tsx" />
+            </FileTree.Folder>
+            <FileTree.Folder name="ioc">
+                <FileTree.File name="container.ts" />
+            </FileTree.Folder>
+            <FileTree.Folder name="modules">
+                <FileTree.Folder name="sample_module"> 
+                    <FileTree.Folder name="components" />
+                    <FileTree.Folder name="controllers" />
+                    <FileTree.Folder name="hooks" />
+                    <FileTree.Folder name="repositories" />
+                    <FileTree.Folder name="types" />
+                    <FileTree.Folder name="views" />
+                </FileTree.Folder>
+            </FileTree.Folder>
+            <FileTree.Folder name="shared">
+                <FileTree.Folder name="components" />
+                <FileTree.Folder name="constant" />
+                <FileTree.Folder name="context" />
+                <FileTree.Folder name="lib" />
+                <FileTree.Folder name="providers" />
+                <FileTree.Folder name="services" />
+                <FileTree.Folder name="store" />
+                <FileTree.Folder name="types" />
+            </FileTree.Folder>
+            <FileTree.Folder name="styles">
+                <FileTree.File name="global.css" />
+            </FileTree.Folder>
+            <FileTree.Folder name="utils">
+                <FileTree.File name="config.ts" />
+            </FileTree.Folder>
+        </FileTree.Folder>
+    </FileTree.Folder>
+
+</FileTree>
+
+### Explanation
+
+beberapa penjelasan singkat setiap kegunaan folder nya buat klean klean yang masih cupu
+
+#### Folder env
+
+folder untuk klean klean yang mau pakai env banyak bisa di taro di folder ini.
+
+cara config env nya baca <Link href="https://nextjs.org/docs" className="text-blue-500">di sini</Link>
+
+#### Folder public
+
+untuk menyimpan semua assets berupa image, svg, font, dan yang lainnya
+
+#### Folder ioc
+
+ini adalah bagian dari depedency injection dengan inversify.
+
+detail untuk depedency injection bisa <Link href="https://nextjs.org/docs" className="text-blue-500">lihat di sini</Link>
+
+#### Folder modules
+
+folder modules berisi module - module atau bagian bagian dari fitur atau kerangka aplikasi yang berjalan secara terpisah.
+
+detail untuk konsep modular cek <Link href="https://nextjs.org/docs" className="text-blue-500">di sini</Link>
+
+#### Folder shared
+
+di peruntukan untuk meyimpan file file yang bersifat global atau bisa digunakan ke module module lain

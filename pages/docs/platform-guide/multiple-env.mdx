@@ -1,0 +1,106 @@
+## Env
+
+Konfigurasi yang diperlukan untuk menambahkan beberapa env ke dalam project kamu.
+
+### Hal yang perlu di ketahui
+
+di nextjs jika kita membuat file env di root project kita seperti ini.
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+    <FileTree.Folder name="root-project" defaultOpen>
+        <FileTree.File name="package.json" />
+        <FileTree.File name="package.lock.json" />
+        <FileTree.File name=".env.development" />
+        <FileTree.File name="env.production" />
+    </FileTree.Folder>
+</FileTree>
+
+env akan di otomatis meyesuaikan environment yang dijalankan oleh nextjs
+
+contoh:
+
+```cmd filename="terminal"
+pnpm dev => akan menggunakan .env.development
+```
+
+```cmd filename="terminal"
+pnpm start => akan menggunakan .env.production
+```
+
+```cmd filename="terminal"
+pnpm build => akan menggunakan .env.production
+```
+
+jika memang seperti ini yang kalian mau boleh di lanjutkan ngodingnya, gk usah lanjut baca!
+
+### Konfigurasi Env
+
+sekarang jika kalian ingin mengatur env agar tidak seperti di atas bisa mengikuti langkah - langkah ini
+
+import { Steps } from 'nextra/components'
+ 
+<Steps>
+### Buat file env
+ 
+buat file env di folder env dalam root project, sebenernya bebas dimana aja buatnya tapi ikutin aja ini lah!
+
+<FileTree>
+    <FileTree.Folder name="root-project" defaultOpen>
+        <FileTree.Folder name="env" defaultOpen>
+            <FileTree.File name=".env.development" />
+            <FileTree.File name="env.production" />
+        </FileTree.Folder>
+        <FileTree.Folder name="src" defaultOpen />
+        <FileTree.File name="package.json" />
+        <FileTree.File name="package.lock.json" />
+    </FileTree.Folder>
+</FileTree>
+
+### Install dotenv
+
+```bash filename="terminal" copy
+pnpm install dotenv
+```
+
+### Edit script di package.json
+
+ganti script build sama run nya, bisa juga tambahin buat run dev nya.
+
+sesuain aja sama kebutuhan klean
+
+```json filename="package.json" copy
+{
+    "scripts": {
+        "dev": "ENVIRONMENT=env/.env.development next dev -p 3005",
+        "build:dev": "ENVIRONMENT=env/.env.development next build",
+        "build:prod": "ENVIRONMENT=env/.env.production next build",
+        "start:dev": "ENVIRONMENT=env/.env.development next start ",
+        "start:prod": "ENVIRONMENT=env/.env.production next start"
+    }
+}
+```
+
+### Edit next.config.mjs
+
+tambahkan konfigurasi untuk load env nya dengan dotenv
+
+```js {1-3} filename="next.config.mjs"
+import dotenv from "dotenv";
+
+dotenv.config({ path: `${process.env.ENVIRONMENT}` });
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    eslint: {
+        dirs: ["src"],
+    },
+
+    distDir: "build",
+    reactStrictMode: false,
+    swcMinify: true,
+};
+```
+
+</Steps>

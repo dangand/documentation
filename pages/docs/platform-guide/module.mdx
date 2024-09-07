@@ -1,0 +1,67 @@
+## Modules
+
+Proyek ini menggunakan arsitektur modular, di mana setiap fitur dibagi menjadi modul yang berdiri sendiri. Setiap modul memiliki fungsionalitasnya sendiri, sehingga membuat kode jadi lebih mudah dikelola, dikembangkan, dan diuji. Misalnya, fitur autentikasi dibuat sebagai modul terpisah yang berisi komponen, controller, hooks, repository, dan views yang dibutuhkan.
+
+## Struktur Modul
+
+Setiap modul punya struktur yang konsisten dan mandiri. Berikut adalah struktur umum dari sebuah modul:
+
+-   `components/`
+
+    -   Berisi komponen React yang spesifik untuk modul tersebut.
+    -   Contoh: Button, form, atau elemen UI lainnya yang hanya dipakai di modul ini.
+
+-   **controllers/**
+
+    -   Berisi logika untuk menangani request dan mengkoordinasikan bagian-bagian dalam modul.
+    -   Contoh: Fungsi untuk menangani input pengguna atau mengelola perpindahan state.
+
+-   **hooks/**
+
+    -   Berisi custom hooks yang mengenkapsulasi logika yang dipakai di dalam modul.
+    -   Contoh: `useAuth()` yang mengelola state autentikasi.
+
+-   **repositories/**
+
+    -   Berfungsi untuk mengakses data, termasuk request ke API atau operasi data lainnya.
+    -   Contoh: Fungsi untuk mengambil, memperbarui, atau menghapus data terkait modul.
+
+-   **views/**
+    -   Berisi tampilan utama atau halaman dari modul tersebut.
+    -   Contoh: Halaman login atau registrasi untuk modul auth.
+
+## Contoh Modul: Auth
+
+Berikut contoh struktur dari modul `auth`:
+
+### 1. Components (`/auth/components`)
+
+Berisi komponen UI khusus untuk proses autentikasi.
+
+-   `LoginForm.js` - Komponen form untuk login.
+-   `RegisterForm.js` - Komponen form untuk registrasi pengguna baru.
+
+### 2. Controllers (`/auth/controllers`)
+
+Berisi fungsi-fungsi yang mengelola alur data dan tindakan pengguna.
+
+-   `authController.js` - Berisi fungsi untuk menangani proses login, registrasi, dan logout.
+
+### 3. Hooks (`/auth/hooks`)
+
+Custom hooks yang mengenkapsulasi logika terkait autentikasi.
+
+-   `useAuth.js` - Mengelola state autentikasi dan menyediakan metode untuk login dan logout.
+
+### 4. Repositories (`/auth/repositories`)
+
+Berfungsi untuk mengambil data dan berinteraksi dengan API atau database.
+
+-   `authRepository.js` - Berisi fungsi untuk request API seperti `login()`, `register()`, dan `logout()`.
+
+### 5. Views (`/auth/views`)
+
+Berisi halaman utama dari modul autentikasi.
+
+-   `LoginView.js` - Halaman utama untuk login.
+-   `RegisterView.js` - Halaman utama untuk registrasi.
