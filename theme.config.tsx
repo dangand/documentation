@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { useConfig } from "nextra-theme-docs";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
@@ -60,7 +59,7 @@ const config: DocsThemeConfig = {
             return <></>;
         }
     },
-    // docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
+    docsRepositoryBase: "https://github.com/dangand/documentation",
     footer: {
         text: "Dangand UI | by rianllauo",
     },

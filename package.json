@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/shuding/nextra-docs-template.git"
+        "url": "git+https://github.com/dangand/documentation.git"
     },
     "author": "Rianllauo <rianllauo@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/shuding/nextra-docs-template/issues"
+        "url": "https://github.com/dangand/documentation/issues"
     },
-    "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+    "homepage": "https://github.com/dangand/documentation#readme",
     "dependencies": {
         "@dangand/base-ui": "^0.0.14",
         "next": "^13.0.6",
